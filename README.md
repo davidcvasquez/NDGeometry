@@ -1,6 +1,6 @@
 # NDGeometry
 
-[![Swift](https://github.com/davidcvasquez/NDGeometry/actions/workflows/swift.yml/badge.svg)](https://github.com/davidcvasquez/NDGeometry/actions/workflows/swift.yml)
+[![Swift](https://github.com/davidcvasquez/NDGeometry/actions/workflows/swift.yml/badge.svg)](https://github.com/davidcvasquez/NDGeometry/actions/workflows/swift.yml) [![codecov](https://codecov.io/gh/davidcvasquez/NDGeometry/graph/badge.svg?token=RXWZJO4AZV)](https://codecov.io/gh/davidcvasquez/NDGeometry)
 
 A collection of Swift geometry types suitable for calculations on background threads, an extension of `CGAffineTransform` that provides X and Y shear transforms, and curve fitting of one or more cubic Bézier segments to a polyline. 
 
