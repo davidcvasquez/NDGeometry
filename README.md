@@ -53,3 +53,7 @@ Convenience initializers are also provided to initialize an NDGeometry type from
 ## Supported Versions
 
 The minimum Swift version supported by NDGeometry is 5.9.
+
+## Reference
+
+See also the [reference documentation](https://davidcvasquez.github.io/NDGeometry/).
