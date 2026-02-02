@@ -139,6 +139,13 @@ final class NDVectorTests: XCTestCase {
         XCTAssertEqual(w.dy, 5.0)
     }
 
+    func testUnaryNegation() {
+        let v = NDVector(dx: 3.0, dy: -4.0)
+        let n = -v
+        XCTAssertEqual(n.dx, -3.0)
+        XCTAssertEqual(n.dy, 4.0)
+    }
+
     func testAddAndSubtractVectors() {
         let a = NDVector(dx: 1.0, dy: 2.0)
         let b = NDVector(dx: 3.0, dy: 4.0)

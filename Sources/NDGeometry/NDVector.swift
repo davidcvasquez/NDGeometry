@@ -81,6 +81,12 @@ nonisolated public struct NDVector: Equatable, Hashable, Codable {
         )
     }
 
+    /// Unary (prefix) negation operator.
+    @inlinable
+    public static prefix func - (v: NDVector) -> NDVector {
+        NDVector(dx: -v.dx, dy: -v.dy)
+    }
+
     /// Subtraction operator for NDVector – NDVector
     @inlinable
     public static func -(lhs: NDVector, rhs: NDVector) -> NDVector {
