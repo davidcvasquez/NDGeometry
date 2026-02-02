@@ -12,6 +12,11 @@
 import SwiftUI
 
 nonisolated public extension NDAngle {
+    /// Initializer by SwiftUI Angle type.
+    @inlinable init(_ swiftUI: Angle) {
+        self.init(radians: swiftUI.radians)
+    }
+
     /// - Returns: A SwiftUI angle for this angle.
     var swiftUIAngle: Angle {
         Angle(radians: Double(radians))

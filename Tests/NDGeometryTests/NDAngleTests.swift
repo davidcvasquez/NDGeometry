@@ -10,6 +10,7 @@
 //===----------------------------------------------------------------------===//
 
 import XCTest
+import SwiftUI
 @testable import NDGeometry
 
 final class NDAngleTests: XCTestCase {
@@ -37,6 +38,24 @@ final class NDAngleTests: XCTestCase {
 
         let a2: NDAngle = .degrees(90.0)
         XCTAssertEqual(a2.radians, .pi / 2, accuracy: 1e-6)
+    }
+
+    func testInitBySwiftUIAngle() {
+        let a1 = NDAngle(Angle(radians: 1.0))
+        XCTAssertEqual(a1.radians, 1.0)
+
+        let a2 = NDAngle(Angle(radians: -1.0))
+        XCTAssertEqual(a2.radians, -1.0)
+    }
+
+    func testConvertToSwiftUIAngle() {
+        let a1 = NDAngle(radians: 1.0)
+        let uiA1: Angle = a1.swiftUIAngle
+        XCTAssertEqual(a1.radians, uiA1.radians)
+
+        let a2 = NDAngle(radians: -1.0)
+        let uiA2: Angle = a2.swiftUIAngle
+        XCTAssertEqual(a2.radians, uiA2.radians)
     }
 
     // MARK: - Degrees computed property
