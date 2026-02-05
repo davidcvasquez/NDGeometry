@@ -15,7 +15,7 @@ public typealias NDFloat = CGFloat
 public typealias Radians = NDFloat
 
 /// A named precision for rounding.
-nonisolated public enum RoundingPrecision: Codable {
+nonisolated public enum RoundingPrecision: Codable, Sendable {
     case ones
     case halves
     case quarters
