@@ -64,9 +64,19 @@ jobs:
 
         echo "Wrote coverage.lcov"
         wc -l coverage.lcov || true
-      
+
+    - name: Inspect coverage file
+      run: |
+        echo "First 200 lines:"
+        sed -n '1,200p' coverage.lcov
+        echo
+        echo "All SF entries:"
+        grep '^SF:' coverage.lcov | sed -n '1,200p'
+        
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v5
       with:
         files: coverage.lcov
+        fail_ci_if_error: true
+        verbose: true
         
