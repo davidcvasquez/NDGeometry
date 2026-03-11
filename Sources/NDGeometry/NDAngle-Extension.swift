@@ -81,5 +81,5 @@ nonisolated extension Angle: @retroactive Strideable {
 }
 
 nonisolated extension Angle.Stride {
-    static let oneDegree: Angle.Stride = Angle.degrees(1).degrees
+    public static let oneDegree: Angle.Stride = Angle.degrees(1).degrees
 }

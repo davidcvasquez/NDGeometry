@@ -199,4 +199,10 @@ final class NDAngleTests: XCTestCase {
         let decoded = try JSONDecoder().decode(NDAngle.self, from: data)
         XCTAssertEqual(decoded.radians, original.radians, accuracy: 1e-6)
     }
+
+    // MARK: Stride
+
+    func testOneDegreeMatchesAngleDegreesOne() {
+        XCTAssertEqual(Angle.Stride.oneDegree, Angle.degrees(1).degrees, accuracy: 0.000_000_1)
+    }
 }
