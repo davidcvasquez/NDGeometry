@@ -61,3 +61,25 @@ nonisolated public extension Angle {
         !self.radians.isZero
     }
 }
+
+nonisolated extension Angle: @retroactive Strideable {
+    /// - Returns: The distance from this value to the given value, expressed as a stride.
+    public func distance(to other: Angle) -> Double {
+        other.degrees - self.degrees
+    }
+
+    /// Returns a value that is offset the specified distance from this value.
+    ///
+    /// Use the `advanced(by:)` method in generic code to offset a value by a
+    /// specified distance. If you're working directly with numeric values, use
+    /// the addition operator (`+`) instead of this method.
+    public func advanced(by n: Double) -> Angle {
+        Angle(degrees: self.degrees + n)
+    }
+
+    public typealias Stride = Double
+}
+
+nonisolated extension Angle.Stride {
+    static let oneDegree: Angle.Stride = Angle.degrees(1).degrees
+}

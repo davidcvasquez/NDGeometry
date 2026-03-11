@@ -126,6 +126,22 @@ import Foundation
     }
 }
 
+nonisolated extension NDAngle: Strideable {
+    /// - Returns: The distance from this value to the given value, expressed as a stride.
+    public func distance(to other: NDAngle) -> Double {
+        other.degrees - self.degrees
+    }
+
+    /// Returns a value that is offset the specified distance from this value.
+    ///
+    /// Use the `advanced(by:)` method in generic code to offset a value by a
+    /// specified distance. If you're working directly with numeric values, use
+    /// the addition operator (`+`) instead of this method.
+    public func advanced(by n: Double) -> NDAngle {
+        NDAngle(degrees: self.degrees + n)
+    }
+}
+
 @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 nonisolated extension NDAngle: Hashable, Comparable {
 
